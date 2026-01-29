@@ -18,16 +18,16 @@ cp .env.algolia.example .env.algolia
 2) Edit `.env.algolia` and set:
 
 ```sh
-- `ALGOLIA_APP_ID`
-- `ALGOLIA_API_KEY` (recommended: search-only key)
-- `ALGOLIA_INDEX_NAME`
+`ALGOLIA_APP_ID`
+`ALGOLIA_API_KEY` (recommended: search-only key)
+`ALGOLIA_INDEX_NAME`
 ```
 
 3) Install dependencies (creates `vendor/` locally):
 
 ```sh
 docker run --rm -it -v "$PWD:/app" -w /app composer:2 install
-```sh
+```
 
 4) Run a test search:
 
@@ -37,6 +37,8 @@ docker run --rm -it -v "$PWD:/app" -w /app --env-file "$PWD/.env.algolia" \
 ```
 
 Output includes:
-PHP version
-Algolia client version
-index, query, nbHits
+- PHP version
+- Algolia PHP API Client version
+- index name
+- query
+- nbHits
