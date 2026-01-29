@@ -11,23 +11,30 @@ Minimal setup to test Algolia searches using:
 
 1) Create an env file:
 
-```bash
+```sh
 cp .env.algolia.example .env.algolia
+```
 
-Edit `.env.algolia` and set:
+2) Edit `.env.algolia` and set:
+
+```sh
 - `ALGOLIA_APP_ID`
 - `ALGOLIA_API_KEY` (recommended: search-only key)
 - `ALGOLIA_INDEX_NAME`
+```
 
-Install dependencies (creates `vendor/` locally):
+3) Install dependencies (creates `vendor/` locally):
 
-```bash
+```sh
 docker run --rm -it -v "$PWD:/app" -w /app composer:2 install
-Run a test search:
+```sh
 
-```bash
+4) Run a test search:
+
+```sh
 docker run --rm -it -v "$PWD:/app" -w /app --env-file "$PWD/.env.algolia" \
   php:7.4-cli php search.php "apple"
+```
 
 Output includes:
 PHP version
